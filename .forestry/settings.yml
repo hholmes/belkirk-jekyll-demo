@@ -5,13 +5,6 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: heading
-  label: Periodical
-- type: jekyll-posts
-  label: Posts
-  create: all
-  templates:
-  - post
-- type: heading
   label: Content
 - type: jekyll-pages
   label: Pages
@@ -19,13 +12,15 @@ sections:
   templates:
   - landing-page
   - default
-- type: directory
-  path: _people
-  label: People
+- type: heading
+  label: Periodical
+- type: jekyll-posts
+  label: Posts
   create: all
-  match: "*"
   templates:
-  - person
+  - post
+- type: heading
+  label: Structure
 - type: directory
   path: _projects
   label: Projects
@@ -33,6 +28,13 @@ sections:
   match: "*"
   templates:
   - project
+- type: directory
+  path: _people
+  label: People
+  create: all
+  match: "*"
+  templates:
+  - person
 - type: document
   path: _data/information.yml
   label: Contact Information
